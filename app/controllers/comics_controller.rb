@@ -31,6 +31,8 @@ class ComicsController < ApplicationController
   end 
 
   def destroy 
+    @comic.destroy
+    redirect_to comics_path
   end 
 
 

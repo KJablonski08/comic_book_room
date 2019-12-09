@@ -1,5 +1,7 @@
 <h1 class="comic-font">All Comics</h1>
 
+<p><%= link_to "Create a Comic", new_comic_path %></p>
+
 <% @comics.each do |comic| %>
   <p><%= comic.series_title %> | <%= comic.issue_number %> </p>
 <% end %> 
