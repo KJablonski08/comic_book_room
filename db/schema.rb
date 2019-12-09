@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_09_005542) do
+ActiveRecord::Schema.define(version: 2019_12_09_034647) do
 
   create_table "comics", force: :cascade do |t|
     t.string "series_title"
     t.integer "issue_number"
     t.integer "quantity_owned"
     t.string "condition"
-    t.boolean "anonymous"
+    t.boolean "anonymous", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -14,9 +14,13 @@ class ComicsController < ApplicationController
   end 
 
   def create 
-    @comic = Comic.new(comic_params) 
-    @comic.save 
-    redirect_to comics_show(@comic)
+    @comic = Comic.new(comic_params)
+    if @comic.save 
+      flash[:notice] = "Comic was successfully created"
+      redirect_to comic_path(@comic)
+    else 
+      render 'new'
+    end 
   end
 
   def edit 
@@ -24,6 +28,7 @@ class ComicsController < ApplicationController
 
   def update
     if @comic.update(comic_params)
+      flash[:notice] = "Comic was successfully updated"
       redirect_to comic_path(@comic)
     else 
       render 'edit'
@@ -32,6 +37,7 @@ class ComicsController < ApplicationController
 
   def destroy 
     @comic.destroy
+    flash[:notice] = "Comic was successfully destroyed"
     redirect_to comics_path
   end 
 

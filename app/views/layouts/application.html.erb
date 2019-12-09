@@ -12,8 +12,15 @@
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">  
 
   </head>
-
   <body>
+  
+    <% flash.each do |name, msg| %>
+      <ul>
+        <li><%= msg %> 
+      </ul>
+    <% end %>
+
     <%= yield %>
+    
   </body>
 </html>
