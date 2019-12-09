@@ -1,0 +1,16 @@
+<h1>Edit Existing Article</h1>
+
+<%= form_with model: @comic do |f| %>
+  <%= f.text_field :series_title, placeholder: "Series Title" %>
+  <br><br>
+  <%= f.text_field :issue_number, placeholder: "Issue Number" %>
+  <br><br>
+  <%= f.text_field :quantity_owned, placeholder: "Quantity Ownded" %>
+  <br><br>
+  <%= f.text_field :condition, placeholder: "Condition" %>
+  <br><br>
+  <%= f.label :anonymous %>
+  <%= f.check_box :anonymous %>
+  <br><br>
+  <%= f.submit "Create Comic" %>
+<% end %>

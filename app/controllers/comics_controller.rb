@@ -19,6 +19,21 @@ class ComicsController < ApplicationController
     redirect_to comics_show(@comic)
   end
 
+  def edit 
+  end 
+
+  def update
+    if @comic.update(comic_params)
+      redirect_to comic_path(@comic)
+    else 
+      render 'edit'
+    end 
+  end 
+
+  def destroy 
+  end 
+
+
   private 
 
   def set_comic
@@ -26,7 +41,7 @@ class ComicsController < ApplicationController
   end 
 
   def comic_params 
-    params.require(:comic).permit(:title, :series, :issue, :author)
+    params.require(:comic).permit(:series_title, :issue_number, :quantity_owned, :condition, :anonymous)
   end 
 
 end  

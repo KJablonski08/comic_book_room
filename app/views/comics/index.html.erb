@@ -1,0 +1,5 @@
+<h1 class="comic-font">All Comics</h1>
+
+<% @comics.each do |comic| %>
+  <p><%= comic.series_title %> | <%= comic.issue_number %> </p>
+<% end %> 
