@@ -1,12 +1,3 @@
 <h1 class="comic-font center">Edit Existing Comic</h1>
 
-<% if @comic.errors.any? %> 
-  <h2>Errors</h2>
-  <ul>
-    <% @comic.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li> 
-    <% end %> 
-  </ul>
-<% end %> 
-
 <%= render 'form' %>
