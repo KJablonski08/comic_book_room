@@ -1,18 +1,18 @@
-<% if @comic.errors.any? %> 
-  <h2>errors</h2>
-  <% @comic.errors.full_messages.each do |msg| %>
-    <ul>
+<% if @comic.errors.any? %>
+  <h2>The following errors prevented the comic from getting created</h2>
+  <ul>
+    <% @comic.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
-    </ul>  
-  <% end %> 
-<% end %> 
+    <% end %> 
+  </ul>
+<% end %>
 
 <%= form_with model: @comic do |f| %>
   <%= f.text_field :series_title, placeholder: "Series Title" %>
   <br><br>
   <%= f.text_field :issue_number, placeholder: "Issue Number" %>
   <br><br>
-  <%= f.text_field :quantity_owned, placeholder: "Quantity Ownded" %>
+  <%= f.text_field :quantity_owned, placeholder: "Quantity Owned" %>
   <br><br>
   <%= f.text_field :condition, placeholder: "Condition" %>
   <br><br>
@@ -21,3 +21,6 @@
   <br><br>
   <%= f.submit "Create Comic" %>
 <% end %>
+
+<br>
+<%= link_to "Back to comics", comics_path %> 

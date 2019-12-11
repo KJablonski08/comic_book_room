@@ -15,7 +15,8 @@ class ComicsController < ApplicationController
 
   def create 
     @comic = Comic.new(comic_params)
-    if @comic.save 
+    if @comic.valid?
+      @comic.save  
       flash[:notice] = "Comic was successfully created"
       redirect_to comic_path(@comic)
     else 
