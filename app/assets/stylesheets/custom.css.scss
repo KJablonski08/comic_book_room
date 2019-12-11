@@ -5,3 +5,19 @@
 .center {
   text-align: center;
 }
+
+.home-body {
+  background-image: asset-url('background.jpg');
+  background-size: cover;
+}
+
+.jumbotron {
+  margin-top: 100px;
+  background-color: white;
+  width: 450px;
+  height: 450px;
+}
+
+.remove-underline {
+  text-decoration: none;
+}

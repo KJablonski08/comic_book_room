@@ -20,7 +20,7 @@ class ComicsController < ApplicationController
       flash[:notice] = "Comic was successfully created"
       redirect_to comic_path(@comic)
     else 
-      render 'new'
+      render :new
     end 
   end
 
