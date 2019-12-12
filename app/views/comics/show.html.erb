@@ -1,3 +1,16 @@
-<h1 class="comic-font center"><%= @comic.series_title %> : <%= @comic.issue_number %></h1>
-
-<p><%= link_to 'Edit', edit_comic_path(@comic) %> | <%= link_to 'Back to Comics Index', comics_path %> | <%= link_to 'Delete', comic_path(@comic), method: :delete, data: {confirm: "are you sure you want to delete this comic?"} %></p> 
+<br>
+<h2 class="center comic-font"><%= @comic.series_title %></h2>
+<h2 class="center comic-font"><%= @comic.issue_number %></h2>
+<br>
+<div class="card bg-light border-light col-xs-8 col-xs-offset-2" >
+  <br>
+  <h4 class="center">Quantity Owned: <%= @comic.quantity_owned %></h4>
+  <h4 class="center">Condition: <%= @comic.condition %></h4>
+  <br>
+  <div class="center">
+    <%= link_to 'Edit', edit_comic_path(@comic), class: "btn btn-outline-dark" %> 
+    <%= link_to 'Delete', comic_path(@comic), method: :delete, data: {confirm: "Are you sure you want to delete the comic?"}, class: "btn btn-outline-danger" %> 
+    <br>
+    <%= link_to 'Back to Comics Index', comics_path, class: "btn btn-light btn-med" %>
+  </div>
+</div>

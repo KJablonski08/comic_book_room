@@ -1,0 +1,11 @@
+<% comic.each do |comic| %>
+  <div class="card bg-light border-light col-xs-8 col-xs-offset-2">        
+    <p>Series Title: <%= comic.series_title %></p>
+    <p>Issue Number: <%= link_to comic.issue_number, comic_path(comic) %></p>
+    <div class="center">
+      <%= link_to 'Edit', edit_comic_path(comic), class: "btn btn-outline-dark" %>
+      <%= link_to 'Delete', comic_path(comic), method: :delete, data: {confirm: "are you sure you want to delete this comic?"}, class: "btn btn-outline-danger" %></td> 
+    </div>
+  </div>
+  <br>
+<% end %> 
