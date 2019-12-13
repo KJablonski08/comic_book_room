@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   end 
 
   def show 
+    @user_comics = @user.comics.order('created_at DESC')
   end 
 
   def new 

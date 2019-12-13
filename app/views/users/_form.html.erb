@@ -46,7 +46,7 @@
       </div>
     
       <div class="center">
-        <%= f.submit "Sign Up", class: "btn btn-outline-dark btn-med" %>
+        <%= f.submit (@user.new_record? ? 'Sign Up' : 'Update Account'), class: "btn btn-outline-dark btn-med" %>
         <br><br>
         <%= link_to "Back to Comics", comics_path, class: "btn btn-light btn-med" %>
       </div>
