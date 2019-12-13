@@ -1,49 +1,52 @@
 <br>
-<%= render 'shared/errors', obj: @comic %>
+<%= render 'shared/errors', obj: @user %>
 <br>
 <div class="row">
   <div class="col-lg-12">
-    <%= form_with model: @comic, local: true do |f| %>
+    <%= form_with model: @user, local: true do |f| %>
       <div class="form-group row">
         <label class="control-label col-sm-2">
-          <%= f.label :series_title %>
+          <%= f.label :username %>
         </label>
         <div class="col-sm-8">
-          <%= f.text_field :series_title, class: "form-control", placeholder: "Series Title" %>
-        </div>
-      </div>
-      <div class="form-group row">
-        <label class="control-label col-sm-2">
-          <%= f.label :issue_number %>
-        </label>
-        <div class="col-sm-8">
-          <%= f.text_field :issue_number, class: "form-control", placeholder: "Issue Number" %>
+          <%= f.text_field :username, class: "form-control", placeholder: "Enter Username" %>
         </div>
       </div>
       <div class="form-group row">
         <label class="control-label col-sm-2">
-          <%= f.label :quantity_owned %>
+          <%= f.label :name %>
         </label>
         <div class="col-sm-8">
-          <%= f.text_field :quantity_owned, class: "form-control", placeholder: "Quantity Owned" %>
+          <%= f.text_field :name, class: "form-control", placeholder: "Enter Name" %>
         </div>
       </div>
       <div class="form-group row">
         <label class="control-label col-sm-2">
-          <%= f.label :condition %>
+          <%= f.label :email %>
         </label>
         <div class="col-sm-8">
-          <%= f.text_field :condition, class: "form-control", placeholder: "Condition" %>
+          <%= f.email_field :email, class: "form-control", placeholder: "Enter Email Address" %>
         </div>
       </div>
       <div class="form-group row">
-        <label class="col-sm-2"><%= f.label :anonymous %></label>
+        <label class="control-label col-sm-2">
+          <%= f.label :password %>
+        </label>
         <div class="col-sm-8">
-          <%= f.check_box :anonymous %>
+          <%= f.password_field :password, class: "form-control", placeholder: "Enter Password" %>
         </div>
       </div>
+      <div class="form-group row">
+        <label class="control-label col-sm-2">
+          <%= f.label :password_confirmation %>
+        </label>
+        <div class="col-sm-8">
+          <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Enter Email Address" %>
+        </div>
+      </div>
+    
       <div class="center">
-        <%= f.submit class: "btn btn-outline-dark btn-med" %>
+        <%= f.submit "Sign Up", class: "btn btn-outline-dark btn-med" %>
         <br><br>
         <%= link_to "Back to Comics", comics_path, class: "btn btn-light btn-med" %>
       </div>

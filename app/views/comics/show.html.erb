@@ -4,8 +4,8 @@
 <br>
 <div class="card bg-light border-light col-xs-8 col-xs-offset-2" >
   <br>
-  <h4 class="center">Quantity Owned: <%= @comic.quantity_owned %></h4>
-  <h4 class="center">Condition: <%= @comic.condition %></h4>
+  <h4 class="center"><strong>Quantity Owned: </strong><%= @comic.quantity_owned %></h4>
+  <h4 class="center"><strong>Condition: </strong><%= @comic.condition %></h4>
   <br>
   <div class="center">
     <%= link_to 'Edit', edit_comic_path(@comic), class: "btn btn-outline-dark" %> 

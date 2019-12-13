@@ -1,7 +1,7 @@
 <% comic.each do |comic| %>
   <div class="card bg-light border-light col-xs-8 col-xs-offset-2">        
-    <p>Series Title: <%= comic.series_title %></p>
-    <p>Issue Number: <%= link_to comic.issue_number, comic_path(comic) %></p>
+    <p><strong>Series Title: </strong><%= comic.series_title %></p>
+    <p><strong>Issue Number: </strong><%= link_to comic.issue_number, comic_path(comic) %></p>
     <div class="comic-meta-details">
       <small><strong>Created by: </strong><%= comic.user.username if comic.user %>,
             <%= comic.created_at.strftime("%m-%d-%Y") %>,
