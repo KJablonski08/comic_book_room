@@ -10,8 +10,9 @@ class UsersController < ApplicationController
     @user_comics = @user.comics.order('created_at DESC')
   end 
 
-  def new 
+  def new
     @user = User.new
+    render :layout => "home"
   end 
 
   def create 

@@ -20,7 +20,7 @@
     <%= render 'layouts/navigation' %>
     <%= render 'layouts/messages' %>
 
-    <% if action_name === "home" %>
+    <% if action_name === "home" || action_name == "login" || action_name == "signup" %>
       <body class="home-body">
     <% end %>
 
