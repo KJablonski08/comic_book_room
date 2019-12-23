@@ -8,8 +8,10 @@
   <h4 class="center"><strong>Condition: </strong><%= @comic.condition %></h4>
   <br>
   <div class="center">
-    <%= link_to 'Edit', edit_comic_path(@comic), class: "btn btn-outline-dark" %> 
-    <%= link_to 'Delete', comic_path(@comic), method: :delete, data: {confirm: "Are you sure you want to delete the comic?"}, class: "btn btn-outline-danger" %> 
+    <% if logged_in? && current_user == @comic.user %> 
+      <%= link_to 'Edit', edit_comic_path(@comic), class: "btn btn-outline-dark" %> 
+      <%= link_to 'Delete', comic_path(@comic), method: :delete, data: {confirm: "Are you sure you want to delete the comic?"}, class: "btn btn-outline-danger" %> 
+    <% end %>  
     <br>
     <%= link_to 'Back to Comics Index', comics_path, class: "btn btn-light btn-med" %>
   </div>
