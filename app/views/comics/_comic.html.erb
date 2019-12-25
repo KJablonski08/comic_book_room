@@ -3,9 +3,13 @@
     <p><strong>Series Title: </strong><%= comic.series_title %></p>
     <p><strong>Issue Number: </strong><%= link_to comic.issue_number, comic_path(comic) %></p>
     <div class="comic-meta-details">
-      <small><strong>Created by: </strong><%= comic.user.username if comic.user %>,
-            <%= comic.created_at.strftime("%m-%d-%Y") %>,
-            <strong>Last updated: </strong><%= time_ago_in_words(comic.updated_at) %> ago</small>
+      <% if comic.anonymous == false %>
+        <strong>Created by: </strong><%= comic.user.username if comic.user %>
+      <% else %> 
+        <strong>Created by: </strong>Anonymous
+      <% end %>
+        <%= comic.created_at.strftime("%m-%d-%Y") %>,
+        <strong>Last updated: </strong><%= time_ago_in_words(comic.updated_at) %> ago
     </div>
     <% if logged_in? && current_user == comic.user %> 
           <div class="center">
