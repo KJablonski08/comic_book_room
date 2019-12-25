@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController 
+  include ApplicationHelper
 
   def new 
     render :layout => "home"
@@ -23,7 +24,7 @@ class SessionsController < ApplicationController
   end 
 
   def destroy 
-    session[:user_id] = nil
+    log_out
     flash[:success] = "You have logged out"
     redirect_to root_path
   end 

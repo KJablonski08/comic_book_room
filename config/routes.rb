@@ -13,5 +13,8 @@ Rails.application.routes.draw do
 
   resources :users, except: [:new]
 
+  resources :comics do
+    resources :comments
+  end
 
 end

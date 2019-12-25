@@ -16,3 +16,29 @@
     <%= link_to 'Back to Comics Index', comics_path, class: "btn btn-light btn-med" %>
   </div>
 </div>
+<br>
+<div class="center">
+  <h4 class="comic-font">Comments</h4>
+</div>
+<br>
+<% @comments.each do |comment| %>
+  <% if comment.comic_id == @comic.id %> 
+    <div class="card bg-light border-light col-xs-8 col-xs-offset-2" >
+      <p><%= comment.content %></p>
+      <p class="comic-meta-details"><%= comment.commenter.username %>, <%= time_ago_in_words(comment.created_at)%> ago</p>
+      <div class="center">
+        <% if logged_in? && current_user == comment.commenter %>
+          <%= link_to 'Edit', edit_comic_comment_path(@comic, comment), class: "btn btn-dark btn-sm" %>  
+          <%= link_to 'Delete', comic_comment_path(@comic, comment), method: :delete, data: {confirm: "are you sure you want to delete this comment?"}, class: "btn btn-danger btn-sm" %> 
+        <% end %>
+      </div>
+      <br>
+    </div>
+    <br>
+  <% end %> 
+<% end %> 
+
+<div class="center">
+  <%= link_to 'New Comment', new_comic_comment_path(@comic, @comment), class: "btn btn-dark btn-sm" %>
+</div>
+<br>

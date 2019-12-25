@@ -1,0 +1,18 @@
+<%= render 'shared/errors', obj: @comment %>
+
+<%= form_with model: [@comic, @comment], local: true do |f| %>
+  <div class="center">
+    <%= f.text_area :content, placeholder: "Add a comment", class: "text-area"%>
+  </div>
+  <br>
+  <div class="center">
+    <%= f.submit class: "btn btn-outline-dark btn-med" %>
+  </div>
+<% end %> 
+
+<div class="center">
+  <br>
+  <%= link_to "Return to comic", comic_path(@comic), class: "btn btn-light btn-sm" %>
+</div> 
+
+

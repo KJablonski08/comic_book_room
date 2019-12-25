@@ -8,6 +8,11 @@ module ApplicationHelper
     !!current_user
   end 
 
+  def log_out 
+    @current_user = nil
+    session.clear 
+  end 
+
   def require_user
     if !logged_in?
       flash[:danger] = "You must be logged in to perform that action"
