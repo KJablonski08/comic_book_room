@@ -1,12 +1,13 @@
-<h1 class="center comic-font">All Publishers</h1>
+<h1 class="center comic-font">All Series</h1>
+
 <div class="center"> 
-  <%= link_to "New Publisher", new_publisher_path, class: "btn btn-light btn-med" %>
+  <%= link_to "New Series", new_series_path, class: "btn btn-light btn-med" %>
 </div>
 <br>
 <div class="center">
-  <% @publishers.each do |publisher| %>
+  <% @series.each do |series| %>
     <div class="card bg-light border-light col-xs-8 col-xs-offset-2">   
-      <%= link_to "#{publisher.name}", publisher_path(publisher) %>
+      <%= link_to "#{series.title}", series_path(series) %>
     </div>
     <br>
   <% end %>
@@ -15,6 +16,4 @@
 <div class="center"> 
   <%= link_to "Back to Comics", comics_path, class: "btn btn-light btn-med" %>
 </div>
-
-
 

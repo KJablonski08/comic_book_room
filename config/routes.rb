@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :comics
   resources :users, except: [:new]
   resources :publishers, except: [:destroy]
+  resources :series, except: [:destroy]
 
   resources :comics do
     resources :comments

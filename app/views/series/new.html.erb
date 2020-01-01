@@ -1,0 +1,20 @@
+<h1 class="center comic-font">Create new Series</h1>
+<br>
+
+<%= render 'shared/errors', obj: @series %>
+
+<%= form_with model: @series, local: true do |f| %>
+  <div class="form-group row">
+    <div class="control-label col-sm-2">
+      <%= f.label :title %>
+    </div>
+    <div class="col-sm-8">
+      <%= f.text_field :title, class: "form-control", placeholder: "Series title"%>
+    </div>
+  </div>
+  <div class="center">
+    <%= f.submit class: "btn btn-outline-dark btn-med" %>
+    <br><br>
+    <%= link_to "Back to Comics", comics_path, class: "btn btn-light btn-med" %>
+  </div>
+<% end %>
