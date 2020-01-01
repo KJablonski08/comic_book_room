@@ -10,11 +10,12 @@ Rails.application.routes.draw do
   get '/auth/facebook/callback' => 'sessions#create'
 
   resources :comics
-
   resources :users, except: [:new]
+  resources :publishers, except: [:destroy]
 
   resources :comics do
     resources :comments
   end
+
 
 end

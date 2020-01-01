@@ -6,7 +6,10 @@ class Comic < ActiveRecord::Base
   has_many :commenters, through: :comments
   #commenters -> User model :class_name=> "User"
 
-  validates :series_title, presence: true
+  belongs_to :series 
+
+  has_many :publishers, through: :release_dates
+
   validates :issue_number, presence: true, length: {maximum: 5}
   validates :quantity_owned, presence: true 
   validates :condition, presence: true 

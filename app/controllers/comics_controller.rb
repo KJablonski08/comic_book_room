@@ -54,7 +54,7 @@ class ComicsController < ApplicationController
   end 
 
   def comic_params 
-    params.require(:comic).permit(:series_title, :issue_number, :quantity_owned, :condition, :anonymous)
+    params.require(:comic).permit(:issue_number, :quantity_owned, :condition, :anonymous)
   end 
 
   def require_same_user 

@@ -10,10 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_25_012112) do
+ActiveRecord::Schema.define(version: 2019_12_27_171756) do
 
   create_table "comics", force: :cascade do |t|
-    t.string "series_title"
     t.integer "issue_number"
     t.integer "quantity_owned"
     t.string "condition"
@@ -21,6 +20,7 @@ ActiveRecord::Schema.define(version: 2019_12_25_012112) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
+    t.integer "series_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -31,8 +31,19 @@ ActiveRecord::Schema.define(version: 2019_12_25_012112) do
     t.integer "comic_id"
   end
 
+  create_table "publisher_series", force: :cascade do |t|
+    t.integer "publisher_id"
+    t.integer "series_id"
+  end
+
   create_table "publishers", force: :cascade do |t|
     t.string "name"
+  end
+
+  create_table "series", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|

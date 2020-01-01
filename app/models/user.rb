@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base 
 
   has_many :comics
+
   has_many :comments
+  
   has_many :commented_comics, through: :comments
   #commented_comics -> comics model :class_name=> "Comic"
 

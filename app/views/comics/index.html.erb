@@ -1,4 +1,7 @@
 <h1 class="comic-font center">All Comics</h1>
-
+<div class="center"> 
+  <%= link_to "New Comic", new_comic_path, class: "btn btn-light btn-med" %>
+</div>
+<br>
 <%= render 'comic', comic: @comics %>
 
