@@ -25,7 +25,7 @@ class SeriesController < ApplicationController
   private 
 
   def series_params 
-    params.require(:series).permit(:title)
+    params.require(:series).permit(:title, comic_ids: [])
   end
 
 end 

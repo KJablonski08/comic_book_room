@@ -15,4 +15,12 @@ class Comic < ActiveRecord::Base
   validates :condition, presence: true 
   validates :user_id, presence: true
 
+  def series_title=(title)
+    self.series = Series.find_or_create_by(title: title)
+  end
+
+  def series_title
+     self.series ? self.series.title : nil
+  end
+
 end 

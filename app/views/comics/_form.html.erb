@@ -9,7 +9,12 @@
           <%= f.label :series_title %>
         </label>
         <div class="col-sm-8">
-          
+          <%= f.text_field :series_title, list: "series" %>
+          <datalist id="series">
+            <% Series.all.each do |series| %>
+              <option value="<%= series.title %>">
+            <% end %>
+          </datalist>
         </div>
       </div>
       <div class="form-group row">
