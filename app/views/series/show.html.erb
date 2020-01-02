@@ -1,3 +1,10 @@
 <br>
 <h1 class="center comic-font"><%= @series.title %></h1> 
 <br>
+
+<%= render 'comics/comic', comic: @series_comics %>
+
+<br>
+<div class="center">
+  <%= link_to "Back to Series", series_index_path, class: "btn btn-light btn-med" %>
+</div>

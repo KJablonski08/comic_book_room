@@ -1,4 +1,12 @@
 <br>
 <h1 class="center comic-font"><%= @publisher.name %></h1> 
 <br>
-
+<div class="center card bg-light border-light col-xs-8 col-xs-offset-2" >
+  <% @publisher.series.each do |series| %>
+    <%= link_to series.title, series_path(series) %> 
+  <% end %> 
+</div>
+<br>
+<div class="center">
+    <%= link_to "Back to Publishers", publishers_path, class: "btn btn-light btn-med" %>
+  </div>

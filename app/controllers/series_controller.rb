@@ -20,12 +20,13 @@ class SeriesController < ApplicationController
 
   def show 
     @series = Series.find(params[:id])
+    @series_comics = @series.comics.order('created_at DESC')
   end 
 
   private 
 
   def series_params 
-    params.require(:series).permit(:title, comic_ids: [])
+    params.require(:series).permit(:title, comic_ids: [], publisher_ids: [])
   end
 
 end 

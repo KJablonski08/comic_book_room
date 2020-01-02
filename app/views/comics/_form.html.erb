@@ -9,8 +9,8 @@
           <%= f.label :series_title %>
         </label>
         <div class="col-sm-8">
-          <%= f.text_field :series_title, list: "series" %>
-          <datalist id="series">
+          <%= f.text_field :series_title, list: "series_title", autocomplete: "off", placeholder: "Series Title" %>
+          <datalist id="series_title">
             <% Series.all.each do |series| %>
               <option value="<%= series.title %>">
             <% end %>
