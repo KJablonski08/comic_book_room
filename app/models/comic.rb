@@ -23,4 +23,6 @@ class Comic < ActiveRecord::Base
      self.series ? self.series.title : nil
   end
 
+  scope :sorted, -> { order('created_at DESC') }
+
 end 

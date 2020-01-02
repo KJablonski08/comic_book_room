@@ -15,7 +15,7 @@ class PublishersController < ApplicationController
   end 
 
   def index 
-    @publishers = Publisher.all 
+    @publishers = Publisher.all.alpha
   end 
 
   def show 

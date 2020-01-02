@@ -21,5 +21,7 @@ class Series < ActiveRecord::Base
     end
   end
 
+  scope :alpha, -> { order(:title) }
+
 end 
 

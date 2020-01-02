@@ -6,11 +6,11 @@ class ComicsController < ApplicationController
   before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def index 
-    @comics = Comic.all
+    @comics = Comic.all.sorted
   end 
 
   def show 
-    @comments = Comment.all
+    @comments = Comment.all.sorted
   end 
 
   def new 
