@@ -1,11 +1,11 @@
 <br>
 <h2 class="center comic-font"><%= @comic.series.title %></h2>
-<h4 class="center comic-font">Issue: <%= @comic.issue_number %></h4>
 <br>
 <div class="card bg-light border-light col-xs-8 col-xs-offset-2" >
   <br>
-  <h4 class="center"><strong>Quantity Owned: </strong><%= @comic.quantity_owned %></h4>
-  <h4 class="center"><strong>Condition: </strong><%= @comic.condition %></h4>
+  <h2 class="center comic-font">Issue: <%= @comic.issue_number %></h2>
+  <h6 class="center"><strong>Quantity Owned: </strong><%= @comic.quantity_owned %></h6>
+  <h6 class="center"><strong>Condition: </strong><%= @comic.condition %></h6>
   <br>
   <div class="center">
     <% if logged_in? && current_user == @comic.user %> 
@@ -21,6 +21,13 @@
   <h4 class="comic-font">Comments</h4>
 </div>
 <br>
+<div class="center">
+  <%= link_to 'New Comment', new_comic_comment_path(@comic, @comment), class: "btn btn-dark btn-sm" %>
+</div>
+<br>
+<div class="pagination justify-content-center comic-font">
+  <%= paginate @comments %>
+</div>
 <% @comments.each do |comment| %>
   <% if comment.comic_id == @comic.id %> 
     <div class="card bg-light border-light col-xs-8 col-xs-offset-2" >
@@ -37,8 +44,3 @@
     <br>
   <% end %> 
 <% end %> 
-
-<div class="center">
-  <%= link_to 'New Comment', new_comic_comment_path(@comic, @comment), class: "btn btn-dark btn-sm" %>
-</div>
-<br>

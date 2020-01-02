@@ -14,13 +14,6 @@ class Series < ActiveRecord::Base
     end
   end
 
-  def publisher_ids=(ids)
-    ids.each do |id|
-      publisher = Publisher.find(id)
-        self.publishers << publisher
-    end
-  end
-
   scope :alpha, -> { order(:title) }
 
 end 

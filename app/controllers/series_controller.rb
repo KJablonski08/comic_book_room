@@ -1,7 +1,7 @@
 class SeriesController < ApplicationController 
 
   def index 
-    @series = Series.all.alpha
+    @series = Series.all.alpha.page(params[:page]).per(10)
   end
 
   def new 

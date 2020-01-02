@@ -24,4 +24,6 @@ class User < ActiveRecord::Base
     end
   end 
 
+  scope :ordered_by_created, -> { order(created_at: :desc) }
+
 end 

@@ -1,7 +1,10 @@
 <h1 class="comic-font center">All Comics</h1>
-<div class="center"> 
-  <%= link_to "New Comic", new_comic_path, class: "btn btn-light btn-med" %>
+<br>
+<div class="pagination justify-content-center comic-font">
+  <%= paginate @comics %>
 </div>
 <br>
 <%= render 'comic', comic: @comics, series: @series %>
-
+<div class="pagination justify-content-center comic-font">
+  <%= paginate @comics %>
+</div>

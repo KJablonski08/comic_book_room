@@ -5,11 +5,11 @@ class UsersController < ApplicationController
   before_action :require_same_user, only: [:edit, :update]
 
   def index
-    @users = User.all 
+    @users = User.all.ordered_by_created.page(params[:page]).per(5)
   end 
 
   def show 
-    @user_comics = @user.comics.order('created_at DESC')
+    @user_comics = @user.comics.page(params[:page]).per(5)
   end 
 
   def new

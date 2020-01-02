@@ -1,5 +1,9 @@
 <h1 class="center comic-font">All Users</h1>
 
+<div class="pagination justify-content-center">
+  <%= paginate @users %> 
+</div>
+
 <% @users.each do |user| %>
   <div class="card bg-light border-light col-xs-8 col-xs-offset-2">        
     <p><strong>Username: </strong><%= link_to user.username, user_path(user) %></p>
@@ -10,3 +14,7 @@
   </div>
   <br>
 <% end %> 
+
+<div class="pagination justify-content-center">
+  <%= paginate @users %> 
+</div>

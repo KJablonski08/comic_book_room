@@ -24,6 +24,9 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'kaminari', '~> 1.1', '>= 1.1.1'
+gem 'bootstrap4-kaminari-views'
+
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
 gem 'omniauth', '~> 1.6', '>= 1.6.1'
