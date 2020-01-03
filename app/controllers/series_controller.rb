@@ -1,4 +1,7 @@
 class SeriesController < ApplicationController 
+  include ApplicationHelper 
+
+  before_action :require_user, except: [:index, :show]
 
   def index 
     @series = Series.all.alpha.page(params[:page]).per(10)

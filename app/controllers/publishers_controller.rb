@@ -1,4 +1,7 @@
-class PublishersController < ApplicationController 
+class PublishersController < ApplicationController
+  include ApplicationHelper 
+
+  before_action :require_user, except: [:index, :show]
 
   def new 
     @publisher = Publisher.new

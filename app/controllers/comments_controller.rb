@@ -1,6 +1,8 @@
 class CommentsController < ApplicationController
   include ApplicationHelper
 
+  before_action :require_user
+
   def new
     find_comic
     @comment = Comment.new
