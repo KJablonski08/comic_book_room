@@ -10,7 +10,7 @@ class ComicsController < ApplicationController
   end 
 
   def show 
-    @comments = Comment.all.sorted.page(params[:page]).per(10)
+    @comments = Comment.all.top_three
   end 
 
   def new 

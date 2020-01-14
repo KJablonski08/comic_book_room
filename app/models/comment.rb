@@ -5,6 +5,6 @@ class Comment < ActiveRecord::Base
 
   validates :content, presence: true
 
-  scope :sorted, -> { order('created_at DESC') }
-  
+  scope :top_three, -> { order('created_at DESC').limit(3)}
+
 end 

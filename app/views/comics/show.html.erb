@@ -23,11 +23,9 @@
 <br>
 <div class="center">
   <%= link_to 'New Comment', new_comic_comment_path(@comic, @comment), class: "btn btn-dark btn-sm" %>
+  <%= link_to 'See all comments', comic_comments_path(@comic, @comment), class: "btn btn-dark btn-sm" %>
 </div>
 <br>
-<div class="pagination justify-content-center comic-font">
-  <%= paginate @comments %>
-</div>
 <% @comments.each do |comment| %>
   <% if comment.comic_id == @comic.id %> 
     <div class="card bg-light border-light col-xs-8 col-xs-offset-2" >

@@ -2,14 +2,13 @@ class CommentsController < ApplicationController
   include ApplicationHelper
 
   before_action :require_user
+  before_action :find_comic 
 
   def new
-    find_comic
     @comment = Comment.new
   end 
 
   def create
-    find_comic
     @comment = Comment.new(comment_params)
     @comment.commenter = current_user
     @comment.comic_id = @comic.id 
@@ -22,15 +21,16 @@ class CommentsController < ApplicationController
     end
   end
 
+  def index 
+    @comments = Comment.all
+  end 
+
   def edit
-    find_comic
     find_comment 
   end 
 
   def update 
-    find_comic
     find_comment 
-
     if @comment.update(comment_params)
       flash[:success] = "Successfully updated your comment"
       redirect_to comic_path(@comic)
@@ -41,7 +41,6 @@ class CommentsController < ApplicationController
   end 
 
   def destroy 
-    find_comic
     find_comment
     @comment.destroy
     flash[:notice] = "Comment was deleted"
