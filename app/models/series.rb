@@ -6,6 +6,7 @@ class Series < ActiveRecord::Base
   has_many :publishers, through: :publisher_series
 
   validates :title, presence: true, length: {minimum: 1, maximum: 50}, uniqueness: true 
+  validates :publisher_ids, presence: true
   
   def comic_ids=(ids)
     ids.each do |id|

@@ -1,11 +1,11 @@
 <h1 class="center comic-font"><%= @user.username %></h1>
 
-<div class="pagination justify-content-center">
+<div class="pagination justify-content-center comic-font">
   <%= paginate @user_comics %> 
 </div>
 
 <%= render '/comics/comic', comic: @user_comics %>
 
-<div class="pagination justify-content-center">
+<div class="pagination justify-content-center comic-font">
   <%= paginate @user_comics %> 
 </div>
