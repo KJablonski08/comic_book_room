@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2019_12_27_171756) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "comics", force: :cascade do |t|
     t.integer "issue_number"
     t.integer "quantity_owned"
