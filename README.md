@@ -8,11 +8,11 @@ Users can interact by commenting on other users collections to talk about story 
 ## Preview
 
 ### Sign up and login using form or login with Facebook
-<span><img src="./comicbookroom-login.gif" width="400" height="400" /></span>
+<img src="./comicbookroom-login.gif" width="400" height="400" />
 
 ### View and comment on comic books 
 Once logged in view your entire collection, view other users collections and comment on comic books to interact with other users 
-<span><img src="./create-new.gif" width="400" height="400" /></span>
+<img src="./create-new.gif" width="400" height="400" />
 
 ## Technologies Used 
 
