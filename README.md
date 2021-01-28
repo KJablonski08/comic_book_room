@@ -11,8 +11,9 @@ Users can interact by commenting on other users collections to talk about story 
 <img src="./comicbookroom-login.gif" width="400" height="400" />
 
 ### View and comment on comic books 
-Once logged in view your entire collection, view other users collections and comment on comic books to interact with other users 
-<img src="./create-new.gif" width="400" height="400" />
+View your entire collection, view other users collections and comment on comic books to interact with other users 
+
+<p><img src="./create-new.gif" width="400" height="400" /></p>
 
 ## Technologies Used 
 
