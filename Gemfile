@@ -28,7 +28,7 @@ gem 'bootstrap4-kaminari-views'
 
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
-gem 'omniauth', '~> 1.6', '>= 1.6.1'
+gem 'omniauth', '~> 1.9'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
